@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Coffee Date Scheduler</title>
+  <!-- Lightly branded palette inspired by Reese's colors -->
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Coffee Date Scheduler</h1>
+  </header>
+  <main>
+    <form id="settings-form">
+      <div class="form-group">
+        <label for="cadence">Cadence</label>
+        <select id="cadence" name="cadence">
+          <option value="7">Weekly</option>
+          <option value="14">Every 2 weeks</option>
+          <option value="30">Monthly</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="day">Day of week</label>
+        <select id="day" name="day">
+          <option value="0">Sunday</option>
+          <option value="1">Monday</option>
+          <option value="2">Tuesday</option>
+          <option value="3">Wednesday</option>
+          <option value="4">Thursday</option>
+          <option value="5">Friday</option>
+          <option value="6">Saturday</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="time">Time</label>
+        <input type="time" id="time" name="time" value="10:00" />
+      </div>
+      <div class="form-group">
+        <label for="duration">Duration (minutes)</label>
+        <input type="number" id="duration" name="duration" value="60" min="15" />
+      </div>
+      <div class="form-group">
+        <label for="location">Location</label>
+        <input type="text" id="location" name="location" value="Your favorite café" />
+      </div>
+      <div class="form-group">
+        <label for="occurrences">Number of occurrences</label>
+        <input type="number" id="occurrences" name="occurrences" value="5" min="1" max="20" />
+      </div>
+      <button type="submit" id="generate-button">Generate dates</button>
+    </form>
+
+    <div id="events-list" aria-live="polite"></div>
+  </main>
+
+  <!-- Event details modal -->
+  <div id="details-modal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-content">
+      <button id="close-modal" class="close-button" aria-label="Close details">×</button>
+      <h2>Event Details</h2>
+      <div id="details-content"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
