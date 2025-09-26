@@ -1,0 +1,9 @@
+{
+  "name": "Coffee Date Scheduler",
+  "short_name": "Coffee Dates",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#fff8f0",
+  "theme_color": "#f15a22",
+  "description": "Schedule recurring coffee dates with your special someone and share via iMessage."
+}
